@@ -19,7 +19,7 @@ fetch('http://localhost:8000/get_results/')
 if (data.data && data.data.results) {
 
 // results 객체를 배열로 변환
-
+    
 const topicsArray = Object.entries(data.data.results);
 
 console.log("Fetched topics:", topicsArray); // 데이터 확인용
