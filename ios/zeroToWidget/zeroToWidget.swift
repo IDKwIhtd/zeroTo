@@ -92,15 +92,15 @@ struct zeroToWidgetEntryView: View {
       VStack {
           
         Text(entry.timeZone.identifier).lineSpacing(1).padding(.bottom)
-        Text(formattedDate(date: entry.date)).fontWeight(.bold) // 시스템에서 자동으로 시간 갱신
+        Text(formattedDate(date: entry.date)).fontWeight(.bold)
               
-      }
+      
       .font(.system(size: 11))
         .lineSpacing(15)
         .padding(.bottom)
+        .containerBackground(.fill, for: .widget);
       
-        VStack {
-            // 서버에서 가져온 key-value 데이터를 한 줄씩 출력
+        
             ForEach(entry.results) { result in
                 HStack {
                     Text(result.key + ":")
@@ -108,11 +108,13 @@ struct zeroToWidgetEntryView: View {
                 }
             }.font(.system(size: 15))
             .italic()
-
-            // 시간 출력 (시스템 스타일로 1분마다 자동 갱신)
+            .containerBackground(.fill, for: .widget);
             
         }
-        .containerBackground(.fill.tertiary, for: .widget) // iOS 17 배경 설정
+      
+        
+      
+        
     }
 }
 
@@ -128,6 +130,14 @@ struct zeroToWidget: Widget {
         .description("Displays local time and server key-value pairs.")
     }
 }
+
+
+
+
+
+
+
+
 
 struct zeroToWidget_Previews: PreviewProvider {
     static var previews: some View {
