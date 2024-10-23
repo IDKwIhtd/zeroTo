@@ -28,6 +28,13 @@ target 'zeroTo' do
     # Pods for testing
   end
 
+  # 위젯 타겟 추가
+  target 'zeroToWidgetExtension' do
+    inherit! :complete
+    # 이 타겟은 main app에서 필요한 pod 의존성을 상속받습니다.
+    # 위젯에 추가적으로 필요한 pod를 여기에 작성할 수 있습니다.
+  end
+
   post_install do |installer|
     # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
     react_native_post_install(

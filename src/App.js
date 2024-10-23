@@ -10,7 +10,7 @@ const [topics, setTopics] = useState([]);
 
 const fetchData = () => {
 
-fetch('http://localhost:8000/get_results/')
+fetch('http://172.30.1.92:8000/get_results/')
 
 .then(response => response.json())
 
